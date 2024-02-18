@@ -34,19 +34,13 @@
                                     <tr>
                                         <td>1</td>
                                         <td>PT001</td>
-                                        <td class="productimgname">
-                                            <a href="javascript:void(0);" class="product-img">
-                                                <img src="assets/img/product/product1.jpg" alt="product">
-                                            </a>
+                                        <td class="">
                                             <a href="javascript:void(0);">Macbook pro</a>
                                         </td>
                                         <td>Computers</td>
                                         <td>30.000.000</td>
                                         <td>5</td>
                                         <td>
-                                            <a class="me-3" href="product-details.html">
-                                                <img src="assets/img/icons/eye.svg" alt="img">
-                                            </a>
                                             <a class="me-3" href="editproduct.html">
                                                 <img src="assets/img/icons/edit.svg" alt="img">
                                             </a>
@@ -58,10 +52,7 @@
                                     <tr>
                                         <td>2</td>
                                         <td>PT002</td>
-                                        <td class="productimgname">
-                                            <a href="javascript:void(0);" class="product-img">
-                                                <img src="assets/img/product/product2.jpg" alt="product">
-                                            </a>
+                                        <td class="">
                                             <a href="javascript:void(0);">Orange</a>
                                         </td>
                                         <td>Fruits</td>
@@ -69,9 +60,6 @@
                                         <td>10</td>
                                         
                                         <td>
-                                            <a class="me-3" href="product-details.html">
-                                                <img src="assets/img/icons/eye.svg" alt="img">
-                                            </a>
                                             <a class="me-3" href="editproduct.html">
                                                 <img src="assets/img/icons/edit.svg" alt="img">
                                             </a>
@@ -83,19 +71,13 @@
                                     <tr>
                                         <td>3</td>
                                         <td>PT003</td>
-                                        <td class="productimgname">
-                                            <a href="javascript:void(0);" class="product-img">
-                                                <img src="assets/img/product/product3.jpg" alt="product">
-                                            </a>
+                                        <td class="">
                                             <a href="javascript:void(0);">Pineapple</a>
                                         </td>
                                         <td>Fruits</td>
                                         <td>100.000</td>
                                         <td>20</td>
                                         <td>
-                                            <a class="me-3" href="product-details.html">
-                                                <img src="assets/img/icons/eye.svg" alt="img">
-                                            </a>
                                             <a class="me-3" href="editproduct.html">
                                                 <img src="assets/img/icons/edit.svg" alt="img">
                                             </a>

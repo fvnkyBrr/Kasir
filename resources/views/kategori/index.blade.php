@@ -29,16 +29,10 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td class="productimgname" style="padding-left: 10%;">
-                                            <a href="javascript:void(0);" class="product-img">
-                                                <img src="assets/img/product/product1.jpg" alt="product">
-                                            </a>
+                                        <td class="" style="padding-left: 10%;">
                                             <a href="javascript:void(0);">Macbook pro</a>
                                         </td>
                                         <td class="text-center">
-                                            <a class="me-3" href="product-details.html">
-                                                <img src="assets/img/icons/eye.svg" alt="img">
-                                            </a>
                                             <a class="me-3" href="editproduct.html">
                                                 <img src="assets/img/icons/edit.svg" alt="img">
                                             </a>
@@ -49,16 +43,10 @@
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td class="productimgname" style="padding-left: 10%;">
-                                            <a href="javascript:void(0);" class="product-img">
-                                                <img src="assets/img/product/product2.jpg" alt="product">
-                                            </a>
+                                        <td class="" style="padding-left: 10%;">
                                             <a href="javascript:void(0);">Orange</a>
                                         </td>
                                         <td class="text-center">
-                                            <a class="me-3" href="product-details.html">
-                                                <img src="assets/img/icons/eye.svg" alt="img">
-                                            </a>
                                             <a class="me-3" href="editproduct.html">
                                                 <img src="assets/img/icons/edit.svg" alt="img">
                                             </a>
@@ -69,17 +57,11 @@
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td class="productimgname" style="padding-left: 10%;">
-                                            <a href="javascript:void(0);" class="product-img">
-                                                <img src="assets/img/product/product3.jpg" alt="product">
-                                            </a>
+                                        <td class="" style="padding-left: 10%;">
                                             <a href="javascript:void(0);">Pineapple</a>
                                         </td>
                                         
                                         <td class="text-center">
-                                            <a class="me-3" href="product-details.html">
-                                                <img src="assets/img/icons/eye.svg" alt="img">
-                                            </a>
                                             <a class="me-3" href="editproduct.html">
                                                 <img src="assets/img/icons/edit.svg" alt="img">
                                             </a>
