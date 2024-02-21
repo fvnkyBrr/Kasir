@@ -28,47 +28,50 @@
 </head>
 
 <body>
-    <div id="global-loader">
-        <div class="whirly-loader"> </div>
-    </div>
+    <form action="/proses_add_kategori" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div id="global-loader">
+            <div class="whirly-loader"> </div>
+        </div>
 
-    <div class="main-wrapper">
+        <div class="main-wrapper">
 
-        @include('layouts.navbar')
+            @include('layouts.navbar')
 
 
-        @include('layouts.sidebar')
+            @include('layouts.sidebar')
 
-        <div class="page-wrapper">
-            <div class="content">
-                <div class="page-header">
-                    <div class="page-title">
-                        <h4>Kategori Add</h4>
-                        <h6>Create new kategori</h6>
+            <div class="page-wrapper">
+                <div class="content">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h4>Kategori Add</h4>
+                            <h6>Create new kategori</h6>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>Kategori Name</label>
-                                    <input type="text">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Kategori Name</label>
+                                        <input type="text" name="kategori" id="kategori" placeholder="Nama Kategori">
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-lg-12">
-                                <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-                                <a href="{{ route('kategori') }}" class="btn btn-cancel">Cancel</a>
+
+                                <div class="col-lg-12">
+                                    <button href="javascript:void(0);" class="btn btn-submit me-2" type="submit">Submit</button>
+                                    <a href="{{ route('kategori') }}" class="btn btn-cancel">Cancel</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>

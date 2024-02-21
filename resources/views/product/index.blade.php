@@ -1,17 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('sweetalert::alert')
     <div class="page-wrapper active">
         <div class="content">
             <div class="row">
-              <div class="page-header">
+                <div class="page-header">
                     <div class="page-title">
                         <h4>Product List</h4>
                         <h6>Manage your products</h6>
                     </div>
                     <div class="page-btn">
-                        <a href="{{ route('addproduct') }}" class="btn btn-added"><img src="assets/img/icons/plus.svg"
-                                alt="img" class="me-1">Add New Product</a>
+                        <a href="/add_product" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img"
+                                class="me-1">Add New Product</a>
                     </div>
                 </div>
                 <div class="card mb-0">
@@ -31,69 +32,45 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>PT001</td>
-                                        <td class="">
-                                            <a href="javascript:void(0);">Macbook pro</a>
-                                        </td>
-                                        <td>Computers</td>
-                                        <td>30.000.000</td>
-                                        <td>5</td>
-                                        <td>
-                                            <a class="me-3" href="editproduct.html">
-                                                <img src="assets/img/icons/edit.svg" alt="img">
-                                            </a>
-                                            <a class="confirm-text" href="javascript:void(0);">
-                                                <img src="assets/img/icons/delete.svg" alt="img">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>PT002</td>
-                                        <td class="">
-                                            <a href="javascript:void(0);">Orange</a>
-                                        </td>
-                                        <td>Fruits</td>
-                                        <td>40.000</td>
-                                        <td>10</td>
-                                        
-                                        <td>
-                                            <a class="me-3" href="editproduct.html">
-                                                <img src="assets/img/icons/edit.svg" alt="img">
-                                            </a>
-                                            <a class="confirm-text" href="javascript:void(0);">
-                                                <img src="assets/img/icons/delete.svg" alt="img">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>PT003</td>
-                                        <td class="">
-                                            <a href="javascript:void(0);">Pineapple</a>
-                                        </td>
-                                        <td>Fruits</td>
-                                        <td>100.000</td>
-                                        <td>20</td>
-                                        <td>
-                                            <a class="me-3" href="editproduct.html">
-                                                <img src="assets/img/icons/edit.svg" alt="img">
-                                            </a>
-                                            <a class="confirm-text" href="javascript:void(0);">
-                                                <img src="assets/img/icons/delete.svg" alt="img">
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    {{-- @dd($data) --}}
+                                    @php
+
+                                        $no = 1;
+                                    @endphp
+                                    @foreach ($data as $d)
+                                        <tr>
+                                            <td>{{ $no++ }}</td>
+                                            <td>{{ $d->id }}</td>
+                                            <td class="">
+                                                <a href="javascript:void(0);">{{ $d->nama_barang }}</a>
+                                            </td>
+                                            <td>{{ $d->category->name_category }}</td>
+                                            <td>{{ $d->harga }}</td>
+                                            <td>{{ $d->stok }}</td>
+                                            <td>
+                                                <a class="me-3" href="{{ route('edit_product', $d->id) }}">
+                                                    <img src="assets/img/icons/edit.svg" alt="Edit">
+                                                </a>
+                                                <form method="POST" action="{{ url('delete_product', $d->id) }}"
+                                                    style="display: inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-link confirm-text"
+                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                        <img src="assets/img/icons/delete.svg" alt="Delete">
+                                                    </button>
+                                                </form>
+                                            </td>
+
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        
 @endsection

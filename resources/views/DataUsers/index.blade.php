@@ -9,7 +9,7 @@
                     <h6>Manage your Users</h6>
                 </div>
                 <div class="page-btn">
-                    <a href="{{ route('addusers') }}" class="btn btn-added">
+                    <a href="{{ route('add_users') }}" class="btn btn-added">
                         <img src="assets/img/icons/plus.svg" alt="img" class="me-2"> Add User
                     </a>
                 </div>
@@ -30,57 +30,32 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="productimgname">
-                                        <a href="javascript:void(0);">Macbook pro</a>
-                                    </td>
-                                    <td>PT001</td>
-                                    <td>walk-in-customer</td>
-                                    <td><span class="badges bg-lightgreen">Sent</span></td>
-                                    <td>
-                                        <a class="me-3" href="editquotation.html">
-                                            <img src="assets/img/icons/edit.svg" alt="img">
-                                        </a>
-                                        <a class="me-3 confirm-text" href="javascript:void(0);">
-                                            <img src="assets/img/icons/delete.svg" alt="img">
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td class="productimgname">
-                                        <a href="javascript:void(0);">Orange</a>
-                                    </td>
-                                    <td>PT002</td>
-                                    <td>walk-in-customer</td>
-                                    <td><span class="badges bg-lightyellow">Ordered</span></td>
-                                    <td>
-                                        <a class="me-3" href="editquotation.html">
-                                            <img src="assets/img/icons/edit.svg" alt="img">
-                                        </a>
-                                        <a class="me-3 confirm-text" href="javascript:void(0);">
-                                            <img src="assets/img/icons/delete.svg" alt="img">
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="productimgname">
-                                        <a href="javascript:void(0);">Stawberry</a>
-                                    </td>
-                                    <td>PT003</td>
-                                    <td>walk-in-customer</td>
-                                    <td><span class="badges bg-lightred">Pending</span></td>
-                                    <td>
-                                        <a class="me-3" href="editquotation.html">
-                                            <img src="assets/img/icons/edit.svg" alt="img">
-                                        </a>
-                                        <a class="me-3 confirm-text" href="javascript:void(0);">
-                                            <img src="assets/img/icons/delete.svg" alt="img">
-                                        </a>
-                                    </td>
-                                </tr>
+                                @php
+                                    $no = 1;
+                                @endphp
+                                @foreach ($users as $u)
+                                    <tr>
+                                        <td>{{ $no++ }}</td>
+                                        <td class="productimgname">
+                                            <a href="javascript:void(0);">{{ $u->name }}</a>
+                                        </td>
+                                        <td>{{ $u->email }}</td>
+                                        <td>{{ $u->jenis_kelamin }}</td>
+                                        <td><span class="badges bg-lightgreen">{{ $u->user_level }}</span></td>
+                                        <td>
+                                            <a class="me-3" href="{{ route('edit_users', $u->id) }}">
+                                                <img src="assets/img/icons/edit.svg" alt="img">
+                                            </a>
+                                            <form method="POST" action="{{ url('delete_users', $u->id) }}" style="display: inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-link confirm-text" href="javascript:void(0);"
+                                                    onclick="return confirm('Apakah Anda ingin menghapus data ini?');">
+                                                    <img src="assets/img/icons/delete.svg" alt="Delete" /> </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -39,7 +39,7 @@
                     <div class="page-header ">
                         <div class="page-title">
                             <div class="page-btn mb-4">
-                                <a href="/" class="btn btn-added">Back Bashboard</a>
+                                <a href="/dashboard" class="btn btn-added">Back Bashboard</a>
                             </div>
                             <h4>Orders</h4>
                             <h6>Manage your purchases</h6>
@@ -49,25 +49,27 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table">
-                                    <thead>
+                                   <thead>
                                         <tr>
                                             <th>No.</th>
                                             <th>Name Product</th>
-                                            <th>Kategori</th>
                                             <th>Harga</th>
                                             <th>Stok</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
+                                        @php
+                                            $no=1;
+                                        @endphp
+                                        @foreach ($data as $d)
+                                            <tr>
+                                            <td>{{ $no++ }}</td>
                                             <td class="productimgname">
-                                                <a href="javascript:void(0);">Macbook pro</a>
+                                                <a href="javascript:void(0);">{{ $d->nama_barang }}</a>
                                             </td>
-                                            <td>PT001</td>
-                                            <td>walk-in-customer</td>
-                                            <td>5</td>
+                                            <td>{{ $d->harga }}</td>
+                                            <td>{{ $d->stok }}</td>
                                             <td>
                                                 <a class="me-3" href="editquotation.html">
                                                     <img src="assets/img/icons/quotation1.svg" alt="img">
@@ -75,34 +77,7 @@
                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td class="productimgname">
-                                                <a href="javascript:void(0);">Orange</a>
-                                            </td>
-                                            <td>PT002</td>
-                                            <td>walk-in-customer</td>
-                                            <td>4</td>
-                                            <td>
-                                                <a class="me-3" href="editquotation.html">
-                                                    <img src="assets/img/icons/quotation1.svg" alt="img">
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td class="productimgname">
-                                                <a href="javascript:void(0);">Stawberry</a>
-                                            </td>
-                                            <td>PT003</td>
-                                            <td>walk-in-customer</td>
-                                            <td>6</td>
-                                            <td>
-                                                <a class="me-3" href="editquotation.html">
-                                                    <img src="assets/img/icons/quotation1.svg" alt="img">
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -151,35 +126,7 @@
                                     <li><a class="confirm-text" href="javascript:void(0);"><img
                                                 src="assets/img/icons/delete-2.svg" alt="img"></a></li>
                                 </ul>
-                                <ul class="product-lists">
-                                    <li>
-                                        <div class="productimg">
-                                            <div class="productcontet">
-                                                <h4>Strawberry
-                                                    <a href="javascript:void(0);" class="ms-2"
-                                                        data-bs-toggle="modal" data-bs-target="#edit"><img
-                                                            src="assets/img/icons/edit-5.svg" alt="img"></a>
-                                                </h4>
-                                                <div class="productlinkset">
-                                                    <h5>PT001</h5>
-                                                </div>
-                                                <div class="increment-decrement">
-                                                    <div class="input-groups">
-                                                        <input type="button" value="-"
-                                                            class="button-minus dec button">
-                                                        <input type="text" name="child" value="0"
-                                                            class="quantity-field">
-                                                        <input type="button" value="+"
-                                                            class="button-plus inc button ">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>3000.00 </li>
-                                    <li><a class="confirm-text" href="javascript:void(0);"><img
-                                                src="assets/img/icons/delete-2.svg" alt="img"></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                         <div class="split-card">
@@ -212,16 +159,10 @@
                                     </ul>
                                 </div>
 
-                                <div class="container">
-                                    <div class="row justify-content-end">
-                                        <div class="col-auto">
-                                            <button type="button" class="btn btn-danger">Batal</button>
-                                        </div>
-                                        <div class="col-auto">
-                                            <button type="button" class="btn btn-primary">Bayar</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="col-lg-12">
+                                <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
+                                <a href="{{ route('kategori') }}" class="btn btn-cancel">Cancel</a>
+                            </div>
 
                             </div>
                         </div>
