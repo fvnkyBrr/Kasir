@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigInteger('id_category')->unsigned();
             $table->integer('harga');
             $table->integer('stok');  
-            $table->timestamps();
+            $table->timestamps();          
             $table->foreign('id_category')->references('id')->on('categories');
         });
     }

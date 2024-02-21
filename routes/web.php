@@ -56,6 +56,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/orders', [OrderController::class, 'index'])->name('orders');
     Route::get('/add_orders', [UserController::class, 'add_orders'])->name('add_orders');
 
+    //Cart
+    Route::get('/cart', [OrderController::class, 'index'])->name('cart');
+    Route::post('/addToCart', [OrderController::class, 'addToCart'])->name('addToCart');
+    Route::get('/removeFromCart', [OrderController::class, 'removeFromCart'])->name('removeFromCart');
+    Route::get('/processTransaction', [OrderController::class, 'processTransaction'])->name('processTransaction');
+
     // Users
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::get('/add_users', [UserController::class, 'add_users'])->name('add_users');
