@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <form action="/proses_add_users" method="POST" enctype="multipart/form-data">
+    <form action="/proses_add_user" method="POST" enctype="multipart/form-data">
         @csrf
         <div id="global-loader">
             <div class="whirly-loader"> </div>
@@ -85,7 +85,7 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>User Level</label>
-                                        <select class="select" name="user_level" id="user_level">
+                                        <select class="select" name="role" id="role">
                                             <option value="" selected disabled>Pilih Role</option>
                                             <option value="admin">Admin</option>
                                             <option value="user">User</option>
@@ -97,7 +97,7 @@
                                 <div class="col-lg-12">
                                     <button href="javascript:void(0);" class="btn btn-submit me-2"
                                         type="submit">Submit</button>
-                                    <a href="{{ route('users') }}" class="btn btn-cancel">Cancel</a>
+                                    <a href="{{ route('add_user') }}" class="btn btn-cancel">Cancel</a>
                                 </div>
                             </div>
                         </div>

@@ -8,11 +8,7 @@
                     <h4>Users List</h4>
                     <h6>Manage your Users</h6>
                 </div>
-                <div class="page-btn">
-                    <a href="{{ route('add_users') }}" class="btn btn-added">
-                        <img src="assets/img/icons/plus.svg" alt="img" class="me-2"> Add User
-                    </a>
-                </div>
+                
             </div>
 
             <div class="card">
@@ -36,26 +32,28 @@
                                 @foreach ($users as $u)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td class="productimgname">
+                                        <td class="">
                                             <a href="javascript:void(0);">{{ $u->name }}</a>
                                         </td>
                                         <td>{{ $u->email }}</td>
                                         <td>{{ $u->jenis_kelamin }}</td>
-                                        <td><span class="badges bg-lightgreen">{{ $u->user_level }}</span></td>
+                                        <td><span class="badges bg-lightgreen">{{ $u->role }}</span></td>
                                         <td>
-                                            <a class="me-3" href="{{ route('edit_users', $u->id) }}">
+                                            <a class="me-3" href="{{ route('edit_user', $u->id) }}">
                                                 <img src="assets/img/icons/edit.svg" alt="img">
                                             </a>
-                                            <form method="POST" action="{{ url('delete_users', $u->id) }}" style="display: inline">
+                                            <form method="POST" action="{{ url('delete_user', $u->id) }}" style="display: inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-link confirm-text" href="javascript:void(0);"
                                                     onclick="return confirm('Apakah Anda ingin menghapus data ini?');">
                                                     <img src="assets/img/icons/delete.svg" alt="Delete" /> </button>
                                             </form>
+                                            
                                         </td>
                                     </tr>
                                 @endforeach
+                                
                             </tbody>
                         </table>
                     </div>

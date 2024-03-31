@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <form action="{{ route('proses_edit_users', $data->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('proses_edit_user', $data->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div id="global-loader">
@@ -91,14 +91,14 @@
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>User Level</label>
-                                        <select class="select" name="user_level" id="user_level">
+                                        <label>Role</label>
+                                        <select class="select" name="role" id="role">
                                             <option value="" selected disabled>Pilih Role</option>
                                             <option value="admin"
-                                                {{ $data->user_level == 'admin' ? 'selected' : '' }}>Admin
+                                                {{ $data->role == 'admin' ? 'selected' : '' }}>Admin
                                             </option>
                                             <option value="user"
-                                                {{ $data->user_level == 'user' ? 'selected' : '' }}>User
+                                                {{ $data->role == 'user' ? 'selected' : '' }}>User
                                             </option>
                                         </select>
 

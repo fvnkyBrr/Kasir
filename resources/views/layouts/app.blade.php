@@ -65,6 +65,7 @@
 </head>
 
 <body>
+
     <div id="global-loader">
         <div class="whirly-loader"> </div>
     </div>
@@ -84,9 +85,13 @@
         {{-- master data --}}
 
         {{-- @yield('barang') --}}
-        
+
     </div>
 
+    @include('sweetalert::alert')
+
+  
+    
 
     <script src="{{ URL::to('assets/js/jquery-3.6.0.min.js') }}"></script>
 
@@ -106,4 +111,3 @@
 </body>
 
 </html>
-

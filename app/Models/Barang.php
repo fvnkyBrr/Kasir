@@ -11,12 +11,12 @@ class Barang extends Model
     use HasFactory;
 
     protected $guarded = [];
-    protected $table = 'barang';
+    protected $table = 'products';
 
-    // protected $fillable = ['id','nama_barang', 'id_category', 'harga', 'stok'];
+    protected $fillable = ['name_product', 'id_category', 'price', 'stok'];
     public static function getProducts()
     {
-        $records = DB::table('barang')->select('id', 'nama_barang', 'kategori', 'harga',  'stok')->get();
+        $records = DB::table('products')->select('id', 'name_product', 'category', 'price',  'stok')->get();
         return $records;
     }
     public function category()

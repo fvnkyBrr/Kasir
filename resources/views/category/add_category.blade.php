@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <form action="/proses_add_kategori" method="POST" enctype="multipart/form-data">
+    <form action="/proses_add_category" method="POST" enctype="multipart/form-data">
         @csrf
         <div id="global-loader">
             <div class="whirly-loader"> </div>
@@ -45,8 +45,8 @@
                 <div class="content">
                     <div class="page-header">
                         <div class="page-title">
-                            <h4>Kategori Add</h4>
-                            <h6>Create new kategori</h6>
+                            <h4>Category Add</h4>
+                            <h6>Create new Category</h6>
                         </div>
                     </div>
 
@@ -55,14 +55,14 @@
                             <div class="row">
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Kategori Name</label>
-                                        <input type="text" name="kategori" id="kategori" placeholder="Nama Kategori">
+                                        <label>Category Name</label>
+                                        <input type="text" name="category" id="category" placeholder="Nama Category">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <button href="javascript:void(0);" class="btn btn-submit me-2" type="submit">Submit</button>
-                                    <a href="{{ route('kategori') }}" class="btn btn-cancel">Cancel</a>
+                                    <a href="{{ route('category') }}" class="btn btn-cancel">Cancel</a>
                                 </div>
                             </div>
                         </div>

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger("harga");
             $table->bigInteger("sub_total");
             $table->foreign('transaction_id')->references('id')->on('transactions');
-            $table->foreign('product_id')->references('id')->on('barang');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
 
         });

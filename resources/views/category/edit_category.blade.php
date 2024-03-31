@@ -29,7 +29,7 @@
 
 <body>
     @if ($data)     
-    <form action="{{ route('proses_edit_kategori', $data->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('proses_edit_category', $data->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div id="global-loader">
@@ -47,8 +47,8 @@
                 <div class="content">
                     <div class="page-header">
                         <div class="page-title">
-                            <h4>Kategori Edit</h4>
-                            <h6>Change your Kategori</h6>
+                            <h4>Category Edit</h4>
+                            <h6>Change your Category</h6>
                         </div>
                     </div>
 
@@ -57,14 +57,14 @@
                             <div class="row">
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Kategori Name</label>
-                                        <input type="text" name="kategori" id="kategori" value="{{ $data->name_category }}">
+                                        <label>Category Name</label>
+                                        <input type="text" name="category" id="category" value="{{ $data->name_category }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <button href="javascript:void(0);" class="btn btn-submit me-2" type="submit">Submit</button>
-                                    <a href="{{ route('kategori') }}" class="btn btn-cancel">Cancel</a>
+                                    <a href="{{ route('category') }}" class="btn btn-cancel">Cancel</a>
                                 </div>
                             </div>
                         </div>

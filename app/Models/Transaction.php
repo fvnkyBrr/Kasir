@@ -9,7 +9,7 @@ class Transaction extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'sub_total', 'paid', 'change', 'total'
+        'user_id','total','serial_number','sub_total', 'paid', 'change', 'total'
     ];
     public function carts()
     {

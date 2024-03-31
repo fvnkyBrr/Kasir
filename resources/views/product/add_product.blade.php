@@ -68,16 +68,16 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label>Product Name</label>
-                                        <input type="text" name="nama_barang" id="nama_barang"
-                                            placeholder="Nama Barang">
+                                        <input type="text" name="name_product" id="name_product"
+                                            placeholder="Name Product">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Kategori</label>
-                                        <select class="select" name="kategori" id="kategori">
-                                            <option value="" selected disabled>Pilih Kategori</option>
-                                            @foreach ($kategori as $k)
+                                        <label>Category</label>
+                                        <select class="select" name="category" id="vategory">
+                                            <option value="" selected disabled>Select Category</option>
+                                            @foreach ($category as $k)
                                                 <option value="{{ $k->id }}">
                                                     {{ $k->name_category }}
                                                 </option>
@@ -88,8 +88,8 @@
 
                                 <div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label>Harga</label>
-                                        <input type="text" name="harga" id="harga" placeholder="20.0**">
+                                        <label>Price</label>
+                                        <input type="text" name="price" id="price" placeholder="20.0**">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-12">

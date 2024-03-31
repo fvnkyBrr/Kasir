@@ -10,8 +10,8 @@
                         <h6>Manage your products</h6>
                     </div>
                     <div class="page-btn">
-                        <a href="{{ route('add_kategori') }}" class="btn btn-added"><img src="assets/img/icons/plus.svg"
-                                alt="img" class="me-1">Add New Kategori</a>
+                        <a href="{{ route('add_category') }}" class="btn btn-added"><img src="assets/img/icons/plus.svg"
+                                alt="img" class="me-1">Add New Category</a>
                     </div>
                 </div>
                 <div class="card mb-0">
@@ -22,7 +22,7 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th class="text-center">Nama Kategory</th>
+                                        <th class="text-center">Name Category</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -37,15 +37,15 @@
                                             <a href="javascript:void(0);" >{{ $d->name_category }}</a>
                                         </td>
                                         <td class="text-center">
-                                            <a  class="me-3" href="{{ route('edit_kategori', $d->id) }}">
+                                            <a  class="me-3" href="{{ route('edit_category', $d->id) }}">
                                                 <img src="/assets/img/icons/edit.svg" alt="img">
                                             </a>
-                                            <form method="POST" action="{{ url('delete_kategori',$d->id) }}" style="display: inline">
+                                            <form method="POST" action="{{ url('delete_category',$d->id) }}" style="display: inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-link confirm-text"  href="javascript:void(0);"  onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                <button type="submit" class="btn btn-link confirm-text" >
                                                     <img src="assets/img/icons/delete.svg" alt="Delete"/>
-                                                </button>
+                                                </button>   
                                             </form>
                                         </td>
                                     </tr>

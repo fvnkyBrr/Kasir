@@ -23,10 +23,10 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Id barang</th>
-                                        <th>Nama Barang</th>
+                                        <th>Id Product</th>
+                                        <th>Name Product</th>
                                         <th>Kategori </th>
-                                        <th>Harga</th>
+                                        <th>Price</th>
                                         <th>Stok</th>
                                         <th>Action</th>
                                     </tr>
@@ -42,21 +42,20 @@
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $d->id }}</td>
                                             <td class="">
-                                                <a href="javascript:void(0);">{{ $d->nama_barang }}</a>
+                                                <a href="javascript:void(0);">{{ $d->name_product }}</a>
                                             </td>
                                             <td>{{ $d->category->name_category }}</td>
-                                            <td>{{ $d->harga }}</td>
+                                            <td>{{ $d->price }}</td>
                                             <td>{{ $d->stok }}</td>
                                             <td>
                                                 <a class="me-3" href="{{ route('edit_product', $d->id) }}">
                                                     <img src="assets/img/icons/edit.svg" alt="Edit">
                                                 </a>
                                                 <form method="POST" action="{{ url('delete_product', $d->id) }}"
-                                                    style="display: inline;">
+                                                    data-confirm-d  elete="true" style="display: inline;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-link confirm-text"
-                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                    <button type="submit" class="btn btn-link confirm-text">
                                                         <img src="assets/img/icons/delete.svg" alt="Delete">
                                                     </button>
                                                 </form>
@@ -73,4 +72,7 @@
             </div>
         </div>
     </div>
+    
 @endsection
+
+

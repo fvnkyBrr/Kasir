@@ -69,16 +69,16 @@
                                     <div class="col-lg-3 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label>Product Name</label>
-                                            <input type="text" name="nama_barang" id="nama_barang"
-                                                value="{{ $data->nama_barang }}">
+                                            <input type="text" name="name_product" id="name_product"
+                                                value="{{ $data->name_product }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-sm-6 col-12">
                                         <div class="form-group">
-                                            <label>Kategori</label>
+                                            <label>Category</label>
                                             <select class="select" name="id_category" id="id_category">
-                                                <option value="" selected disabled>Pilih Kategori</option>
-                                                @foreach ($kategori as $cat)
+                                                <option value="" selected disabled>Select Category</option>
+                                                @foreach ($category as $cat)
                                                     <option value="{{ $cat->id }}"
                                                         {{ $data->id_category == $cat->id ? 'selected' : '' }}>
                                                         {{ $cat->name_category }}
@@ -90,9 +90,9 @@
 
                                     <div class="col-lg-3 col-sm-6 col-12">
                                         <div class="form-group">
-                                            <label>Harga</label>
-                                            <input type="text" name="harga" id="harga"
-                                                value="{{ $data->harga }}">
+                                            <label>Price</label>
+                                            <input type="text" name="price" id="price"
+                                                value="{{ $data->price }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-sm-6 col-12">
